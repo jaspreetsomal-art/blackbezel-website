@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: blackbezel
+    runtime: static
+    staticPublishPath: .
+    domains:
+      - blackbezel.com
+      - www.blackbezel.com
