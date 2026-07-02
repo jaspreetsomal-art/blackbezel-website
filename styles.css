@@ -761,3 +761,67 @@ body.theme-v2 .nav-cta {
 body.theme-v2 .nav-cta:hover { background: #e79912; }
 body.theme-v2 .step-num { background: rgba(246, 167, 35, 0.18); color: #b26e00; }
 body.theme-v2 .brand-name { color: #2b4ea2; }
+
+/* ============ Professional polish pass ============ */
+h1 { line-height: 1.08; }
+h1, h2 { text-wrap: balance; }
+::selection { background: var(--accent); color: #ffffff; }
+
+.section { padding: 6rem 0; }
+.section-sub { line-height: 1.75; }
+.hero-sub { line-height: 1.7; }
+.eyebrow { font-size: 0.75rem; letter-spacing: 0.18em; }
+
+.btn { border-radius: 12px; letter-spacing: 0.01em; }
+.field input,
+.field select,
+.field textarea { border-radius: 10px; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus { box-shadow: 0 0 0 3px var(--accent-soft); }
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  border-radius: 14px;
+  font-size: 1.4rem;
+  margin-bottom: 1.1rem;
+}
+.card { padding: 2rem 1.8rem; }
+.card h3 { font-size: 1.18rem; }
+.card > p { line-height: 1.65; }
+
+.ind-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  border-radius: 12px;
+  font-size: 1.3rem;
+  margin: 0 auto 0.7rem;
+}
+.industry { padding: 1.6rem 1rem 1.4rem; }
+
+.step { padding: 1.7rem 1.5rem; }
+.strip-grid strong { font-size: 1.5rem; letter-spacing: -0.01em; }
+
+body.theme-v2 .nav-wrap { border-bottom-color: rgba(26, 37, 64, 0.08); }
+body.theme-v2 .card,
+body.theme-v2 .step,
+body.theme-v2 .industry,
+body.theme-v2 .check-panel,
+body.theme-v2 .contact-form {
+  box-shadow: 0 1px 2px rgba(26, 37, 64, 0.05), 0 10px 30px rgba(26, 37, 64, 0.05);
+}
+body.theme-v2 .card:hover {
+  box-shadow: 0 2px 4px rgba(26, 37, 64, 0.06), 0 16px 40px rgba(26, 37, 64, 0.10);
+}
+body.theme-v2 .mock-window { box-shadow: 0 24px 60px rgba(26, 37, 64, 0.12); }
+body.theme-v2 .footer { background: #f8fafd; }
+body.theme-v2 .footer-bottom { border-top-color: rgba(26, 37, 64, 0.08); }
