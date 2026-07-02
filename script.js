@@ -17,21 +17,42 @@ navLinks.addEventListener("click", (e) => {
 // Contact form (front-end only — wire to a backend or form service later)
 const form = document.getElementById("contactForm");
 const note = document.getElementById("formNote");
+const industrySelect = document.getElementById("industry");
+const otherIndustryField = document.getElementById("otherIndustryField");
+
+industrySelect.addEventListener("change", () => {
+  const isOther = industrySelect.value === "Other";
+  otherIndustryField.hidden = !isOther;
+  if (!isOther) document.getElementById("otherIndustry").value = "";
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
+  const missing = [];
 
-  if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    note.textContent = "Please enter your name and a valid email address.";
+  if (!form.name.value.trim()) missing.push("your name");
+  const email = form.email.value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) missing.push("a valid work email");
+  if (!form.company.value.trim()) missing.push("business name");
+  if (!industrySelect.value) missing.push("industry");
+  if (industrySelect.value === "Other" && !form.otherIndustry.value.trim()) missing.push("your industry");
+  if (!form.state.value.trim()) missing.push("state");
+  if (!form.country.value.trim()) missing.push("country");
+  if (!form.footprint.value) missing.push("operating footprint");
+  if (!form.employees.value) missing.push("number of employees");
+  const services = form.querySelectorAll('input[name="services"]:checked');
+  if (services.length === 0) missing.push("at least one service needed");
+
+  if (missing.length > 0) {
+    note.textContent = "Please provide: " + missing.join(", ") + ".";
     note.style.color = "#ffb454";
     return;
   }
 
-  note.textContent = "Thanks, " + name + "! We received your request and will reach out within one business day.";
+  note.textContent = "Thanks, " + form.name.value.trim() + "! We received your request and will reach out within one business day.";
   note.style.color = "";
   form.reset();
+  otherIndustryField.hidden = true;
 });
 
 // Footer year
