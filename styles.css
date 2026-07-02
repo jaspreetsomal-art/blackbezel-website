@@ -658,3 +658,75 @@ h4 { font-size: 1.02rem; font-weight: 600; }
   .nav-links li { padding: 0.55rem 1.4rem; }
   .nav-cta { display: inline-block; text-align: center; }
 }
+
+/* ============ Theme toggle & Version 2 theme (light, logo colors) ============ */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.theme-toggle:hover { color: var(--text); border-color: var(--accent); }
+
+body.theme-v2 {
+  --bg: #ffffff;
+  --bg-soft: #f4f7fb;
+  --panel: #ffffff;
+  --line: rgba(26, 37, 64, 0.14);
+  --text: #1a2540;
+  --muted: #55638a;
+  --accent: #2b4ea2;
+  --accent-2: #d98e04;
+  --accent-soft: rgba(43, 78, 162, 0.08);
+}
+body.theme-v2 .nav-wrap { background: rgba(255, 255, 255, 0.92); }
+body.theme-v2 .hero {
+  background:
+    radial-gradient(800px 400px at 85% -10%, rgba(43, 78, 162, 0.10), transparent 60%),
+    radial-gradient(600px 350px at 0% 110%, rgba(245, 166, 35, 0.12), transparent 60%);
+}
+body.theme-v2 .grad {
+  background: linear-gradient(92deg, #2b4ea2, #d98e04);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+body.theme-v2 .mock-window { box-shadow: 0 30px 80px rgba(26, 37, 64, 0.18); }
+body.theme-v2 .mock-bar { background: rgba(26, 37, 64, 0.03); }
+body.theme-v2 .mock-bar span { background: rgba(26, 37, 64, 0.15); }
+body.theme-v2 .mock-bar-fill { background: rgba(26, 37, 64, 0.08); }
+body.theme-v2 .mock-bar-fill::after { background: linear-gradient(90deg, #2b4ea2, #5d7fd0); }
+body.theme-v2 .mock-bar-fill.green::after { background: linear-gradient(90deg, #f5a623, #ffc75e); }
+body.theme-v2 .chip { background: rgba(26, 37, 64, 0.04); }
+body.theme-v2 .chip.ok { color: #1e7d4f; border-color: rgba(30, 125, 79, 0.4); }
+body.theme-v2 .chip.warn { color: #b25e00; border-color: rgba(178, 94, 0, 0.4); }
+body.theme-v2 .btn-primary {
+  background: linear-gradient(92deg, #2b4ea2, #3a62c0);
+  box-shadow: 0 8px 24px rgba(43, 78, 162, 0.28);
+}
+body.theme-v2 .card:hover { border-color: rgba(43, 78, 162, 0.45); }
+body.theme-v2 .card.featured {
+  border-color: rgba(245, 166, 35, 0.6);
+  background: linear-gradient(160deg, rgba(245, 166, 35, 0.09), var(--panel) 55%);
+}
+body.theme-v2 .flow span { border-color: rgba(43, 78, 162, 0.35); }
+body.theme-v2 .regulated-note {
+  background: rgba(245, 166, 35, 0.08);
+  border-color: rgba(245, 166, 35, 0.5);
+}
+body.theme-v2 .privacy-note {
+  background: rgba(43, 78, 162, 0.05);
+  border-color: rgba(43, 78, 162, 0.3);
+}
+body.theme-v2 .industry.reg { border-color: rgba(245, 166, 35, 0.55); }
+body.theme-v2 .chip-check span { background: #ffffff; }
+body.theme-v2 .contact {
+  background:
+    radial-gradient(700px 400px at 100% 0%, rgba(43, 78, 162, 0.08), transparent 60%),
+    var(--bg-soft);
+}
