@@ -505,6 +505,23 @@ h4 { font-size: 1.02rem; font-weight: 600; }
 }
 .regulated-note p strong { color: var(--text); }
 
+.privacy-note {
+  margin-top: 1rem;
+  background: rgba(79, 140, 255, 0.06);
+  border: 1px solid rgba(79, 140, 255, 0.3);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+}
+.privacy-note h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.privacy-note p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.privacy-note p strong { color: var(--text); }
+
 .contact-form {
   background: var(--panel);
   border: 1px solid var(--line);
