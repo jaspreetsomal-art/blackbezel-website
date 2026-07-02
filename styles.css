@@ -402,6 +402,35 @@ h4 { font-size: 1.02rem; font-weight: 600; }
 .step h4 { margin-bottom: 0.4rem; }
 .step p { color: var(--muted); font-size: 0.87rem; }
 
+/* ============ Industries (About us) ============ */
+.industries {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.industry {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1rem 1.2rem;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.industry:hover { transform: translateY(-3px); border-color: rgba(79, 140, 255, 0.45); }
+.industry.reg { border-color: rgba(56, 217, 169, 0.35); }
+.ind-icon { font-size: 1.7rem; display: block; margin-bottom: 0.6rem; }
+.industry h4 { font-size: 0.95rem; }
+.industry small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--accent-2);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
 /* ============ Contact ============ */
 .contact {
   background:
@@ -531,11 +560,13 @@ h4 { font-size: 1.02rem; font-weight: 600; }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
   .strip-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .industries { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 640px) {
   .section { padding: 3.8rem 0; }
   .cards, .rcm-steps, .process-steps { grid-template-columns: 1fr; }
+  .industries { grid-template-columns: repeat(2, 1fr); }
 
   .nav-toggle { display: flex; }
   .nav-links {
