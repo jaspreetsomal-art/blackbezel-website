@@ -80,3 +80,12 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("bb-theme", v2 ? "v2" : "v1");
   applyTheme(v2);
 });
+
+// Animated active underline on nav links
+const sectionLinks = Array.from(navLinks.querySelectorAll('a[href^="#"]')).filter((a) => !a.classList.contains("nav-cta"));
+sectionLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    sectionLinks.forEach((l) => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
