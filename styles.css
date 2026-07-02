@@ -16,6 +16,8 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -502,6 +504,7 @@ h4 { font-size: 1.02rem; font-weight: 600; }
 .field { display: grid; gap: 0.4rem; }
 .field label { font-size: 0.86rem; font-weight: 600; color: var(--muted); }
 .field input,
+.field select,
 .field textarea {
   background: var(--bg);
   border: 1px solid var(--line);
@@ -514,11 +517,50 @@ h4 { font-size: 1.02rem; font-weight: 600; }
   transition: border-color 0.2s;
 }
 .field input:focus,
+.field select:focus,
 .field textarea:focus {
   outline: none;
   border-color: var(--accent);
 }
 .form-note { font-size: 0.88rem; color: var(--accent-2); min-height: 1.2em; }
+
+.form-section-title {
+  margin-top: 0.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+}
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+.field .hint {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.service-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip-check input { display: none; }
+.chip-check span {
+  display: inline-block;
+  padding: 0.45rem 0.95rem;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.87rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.chip-check span:hover { border-color: var(--accent); color: var(--text); }
+.chip-check input:checked + span {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--text);
+  font-weight: 600;
+}
 
 /* ============ Footer ============ */
 .footer {
@@ -567,6 +609,7 @@ h4 { font-size: 1.02rem; font-weight: 600; }
   .section { padding: 3.8rem 0; }
   .cards, .rcm-steps, .process-steps { grid-template-columns: 1fr; }
   .industries { grid-template-columns: repeat(2, 1fr); }
+  .field-row { grid-template-columns: 1fr; }
 
   .nav-toggle { display: flex; }
   .nav-links {
