@@ -60,7 +60,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 // Site theme — set to "v1" (dark) or "v2" (light, logo colors).
 // Not exposed to visitors; change this value to switch the whole site.
-const SITE_THEME = "v1";
+const SITE_THEME = "v2";
 if (SITE_THEME === "v2") document.body.classList.add("theme-v2");
 
 // Animated active underline on nav links
