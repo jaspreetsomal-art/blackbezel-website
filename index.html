@@ -340,20 +340,85 @@
       </div>
       <form class="contact-form" id="contactForm" novalidate>
         <div class="field">
-          <label for="name">Your name</label>
+          <label for="name">Your name *</label>
           <input type="text" id="name" name="name" placeholder="Jane Smith" required />
         </div>
         <div class="field">
-          <label for="email">Work email</label>
+          <label for="email">Work email *</label>
           <input type="email" id="email" name="email" placeholder="jane@company.com" required />
         </div>
+
+        <h3 class="form-section-title">Tell us about your business</h3>
         <div class="field">
-          <label for="company">Business name</label>
-          <input type="text" id="company" name="company" placeholder="Acme Services LLC" />
+          <label for="company">Business name *</label>
+          <input type="text" id="company" name="company" placeholder="Acme Services LLC" required />
         </div>
         <div class="field">
-          <label for="message">What do you need help with?</label>
-          <textarea id="message" name="message" rows="4" placeholder="e.g. We schedule 60 field staff in spreadsheets and invoice manually…"></textarea>
+          <label for="industry">Industry *</label>
+          <select id="industry" name="industry" required>
+            <option value="" disabled selected>Select your industry…</option>
+            <option>Healthcare</option>
+            <option>Hospitality</option>
+            <option>Defense</option>
+            <option>Government</option>
+            <option>Construction</option>
+            <option>Manufacturing</option>
+            <option>Logistics &amp; Transportation</option>
+            <option>Staffing &amp; Recruiting</option>
+            <option>Professional Services</option>
+            <option>Retail &amp; E-commerce</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field" id="otherIndustryField" hidden>
+          <label for="otherIndustry">Your industry *</label>
+          <input type="text" id="otherIndustry" name="otherIndustry" placeholder="Tell us what industry you're in" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="state">State *</label>
+            <input type="text" id="state" name="state" placeholder="e.g. California" required />
+          </div>
+          <div class="field">
+            <label for="country">Country *</label>
+            <input type="text" id="country" name="country" placeholder="e.g. United States" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="footprint">Operating footprint *</label>
+            <select id="footprint" name="footprint" required>
+              <option value="" disabled selected>Select…</option>
+              <option>Single state</option>
+              <option>Multi-state</option>
+              <option>Global</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="employees">Number of employees *</label>
+            <select id="employees" name="employees" required>
+              <option value="" disabled selected>Select…</option>
+              <option>1–10</option>
+              <option>11–50</option>
+              <option>51–200</option>
+              <option>201–500</option>
+              <option>500+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Services needed * <span class="hint">(select all that apply)</span></label>
+          <div class="service-chips">
+            <label class="chip-check"><input type="checkbox" name="services" value="Project Management" /><span>Project Management</span></label>
+            <label class="chip-check"><input type="checkbox" name="services" value="Scheduling &amp; Timekeeping" /><span>Scheduling &amp; Timekeeping</span></label>
+            <label class="chip-check"><input type="checkbox" name="services" value="Revenue Cycle" /><span>Revenue Cycle</span></label>
+            <label class="chip-check"><input type="checkbox" name="services" value="Data Management" /><span>Data Management</span></label>
+            <label class="chip-check"><input type="checkbox" name="services" value="Customer Acquisition &amp; Marketing" /><span>Customer Acquisition &amp; Marketing</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Anything else we should know?</label>
+          <textarea id="message" name="message" rows="3" placeholder="e.g. We schedule 60 field staff in spreadsheets and invoice manually…"></textarea>
         </div>
         <button type="submit" class="btn btn-primary full">Request My Free Consultation</button>
         <p class="form-note" id="formNote"></p>
