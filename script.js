@@ -49,10 +49,38 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  note.textContent = "Thanks, " + form.name.value.trim() + "! We received your request and will reach out within one business day.";
+  const data = {
+    _subject: "New consultation request — blackbezel.com",
+    _template: "table",
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    business: form.company.value.trim(),
+    industry: industrySelect.value === "Other" ? "Other: " + form.otherIndustry.value.trim() : industrySelect.value,
+    state: form.state.value.trim(),
+    country: form.country.value.trim(),
+    footprint: form.footprint.value,
+    employees: form.employees.value,
+    services: Array.from(services).map((s) => s.value).join(", "),
+    message: form.message.value.trim()
+  };
+
+  note.textContent = "Sending…";
   note.style.color = "";
-  form.reset();
-  otherIndustryField.hidden = true;
+  fetch("https://formsubmit.co/ajax/jaspreet.somal@gmail.com", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(data)
+  })
+    .then((r) => {
+      if (!r.ok) throw new Error("send failed");
+      note.textContent = "Thanks, " + data.name + "! We received your request and will reach out within one business day.";
+      form.reset();
+      otherIndustryField.hidden = true;
+    })
+    .catch(() => {
+      note.textContent = "Something went wrong — please try again in a moment.";
+      note.style.color = "#ffb454";
+    });
 });
 
 // Footer year
