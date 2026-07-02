@@ -825,3 +825,10 @@ body.theme-v2 .card:hover {
 body.theme-v2 .mock-window { box-shadow: 0 24px 60px rgba(26, 37, 64, 0.12); }
 body.theme-v2 .footer { background: #f8fafd; }
 body.theme-v2 .footer-bottom { border-top-color: rgba(26, 37, 64, 0.08); }
+
+/* V2: titles in dark blue */
+body.theme-v2 h1,
+body.theme-v2 h2,
+body.theme-v2 h3,
+body.theme-v2 h4 { color: #2b4ea2; }
+body.theme-v2 .regulated-note h4 { color: var(--accent-2); }
