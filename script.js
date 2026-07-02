@@ -58,28 +58,10 @@ form.addEventListener("submit", (e) => {
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Theme toggle — Version 1 (dark) / Version 2 (light, logo colors)
-const themeLi = document.createElement("li");
-const themeToggle = document.createElement("button");
-themeToggle.type = "button";
-themeToggle.className = "theme-toggle";
-themeToggle.id = "themeToggle";
-themeLi.appendChild(themeToggle);
-navLinks.insertBefore(themeLi, navLinks.querySelector(".nav-cta").parentElement);
-
-function applyTheme(v2) {
-  document.body.classList.toggle("theme-v2", v2);
-  themeToggle.textContent = v2 ? "Version 1" : "Version 2";
-  themeToggle.title = v2 ? "Switch to Version 1 (dark theme)" : "Switch to Version 2 (light theme)";
-}
-
-applyTheme(localStorage.getItem("bb-theme") === "v2");
-
-themeToggle.addEventListener("click", () => {
-  const v2 = !document.body.classList.contains("theme-v2");
-  localStorage.setItem("bb-theme", v2 ? "v2" : "v1");
-  applyTheme(v2);
-});
+// Site theme — set to "v1" (dark) or "v2" (light, logo colors).
+// Not exposed to visitors; change this value to switch the whole site.
+const SITE_THEME = "v1";
+if (SITE_THEME === "v2") document.body.classList.add("theme-v2");
 
 // Animated active underline on nav links
 const sectionLinks = Array.from(navLinks.querySelectorAll('a[href^="#"]')).filter((a) => !a.classList.contains("nav-cta"));
