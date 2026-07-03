@@ -71,8 +71,9 @@ form.addEventListener("submit", (e) => {
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify(data)
   })
-    .then((r) => {
-      if (!r.ok) throw new Error("send failed");
+    .then((r) => r.json().catch(() => ({})))
+    .then((d) => {
+      if (String(d.success) !== "true") throw new Error(d.message || "send failed");
       note.textContent = "Thanks, " + data.name + "! We received your request and will reach out within one business day.";
       form.reset();
       otherIndustryField.hidden = true;
