@@ -66,7 +66,7 @@ form.addEventListener("submit", (e) => {
 
   note.textContent = "Sending…";
   note.style.color = "";
-  fetch("https://formsubmit.co/ajax/jaspreet.somal@gmail.com", {
+  fetch("https://formsubmit.co/ajax/admin@lifemedicalcare.com", {
     method: "POST",
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify(data)
